@@ -1,0 +1,187 @@
+body {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -50;
+  -webkit-user-drag: none;
+}
+
+#login-form {
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  top: 30%;
+  z-index: 10;
+}
+
+#login-form p {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+#login-form #tiny-text {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+#login-form-input {
+  width: 600px;
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid white;
+  background: transparent;
+
+  text-align: center;
+  color: white;
+  font-size: 50px;
+
+  outline: none;
+}
+
+#todo-form {
+  display: inline;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+
+  position: absolute;
+  bottom: 25%;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+}
+
+#todo-form input {
+  width: 300px;
+  height: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid white;
+  background: transparent;
+
+  text-align: center;
+  color: white;
+  font-size: 20px;
+
+  outline: none;
+}
+
+#todo-list {
+  color: white;
+  font-size: 25px;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+
+  height: 70px;
+  width: 100px;
+  display: inline;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  bottom: 13%;
+}
+
+#todo-list button {
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+}
+
+#todo-list button:hover {
+  cursor: pointer;
+}
+
+#clock {
+  display: inline-block;
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  top: 20%;
+
+  font-size: 150px;
+}
+
+#greeting {
+  display: inline-block;
+  color: white;
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  top: 50%;
+
+  text-align: center;
+  font-size: 45px;
+}
+
+#quote {
+  color: rgba(255, 255, 255, 0.8);
+  width: 1000px;
+  display: inline;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -500px;
+
+  text-align: center;
+  font-size: 20px;
+}
+
+#weather {
+  display: inline;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+
+.appear {
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
+}
+
+.disappear {
+  animation: fade-out 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

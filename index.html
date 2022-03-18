@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Momentum App</title>
+</head>
+    <body>
+        <form id="login-form" class="hidden" title="이름을 입력해 주세요">
+            <p>Hello, What's your name?</p>
+            <input
+            autocomplete="off"
+            id="login-form-input" 
+            required
+            maxlength="15" 
+            type="text" 
+            placeholder="">
+            <p id="tiny-text">이름을 입력한 후, 엔터를 눌러주세요</p>
+        </form>
+
+        
+        <h1 id="greeting" class="hidden"></h1>
+        <h2 id="clock" class="hidden">00:00:00</h2>
+        <form id="todo-form" class="hidden">
+            <p>What is your main focus for today?</p>
+            <input required type="text" placeholder="">
+        </form>
+
+        <ul id="todo-list">
+
+        </ul>
+
+        <div id="weather" class="hidden">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="quote" class="hidden">
+            <span></span>
+            <span></span>
+        </div>
+        <!-- .js연결순서에 따라서 .js파일간 접근할 수 있는 변수, 함수 등이 달라짐 -->
+        <!-- ex) greeting.js 파일을 먼저 html과 연결한 후 clock.js에 있는 함수를 호출하면 찾을 수 없다함 -->
+        <!-- clock.js를 먼저 html과 연결한 후 greeting.js에서 clock.js의 함수를 호출하면 가능함-->
+        
+        <script src="js/clock.js"></script>
+        <script src="js/quotes.js"></script>
+        <script src="js/background.js"></script>
+        <script src="js/todo.js"></script>
+        <script src="js/weather.js"></script>
+        <script src="js/greeting.js"></script>
+    </body>
+</html>
