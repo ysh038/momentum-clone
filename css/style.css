@@ -115,7 +115,6 @@ img {
 }
 
 #clock {
-  display: inline-block;
   color: white;
   position: absolute;
   left: 50%;
@@ -126,7 +125,6 @@ img {
 }
 
 #greeting {
-  display: inline-block;
   color: white;
   position: absolute;
   width: 600px;
@@ -141,7 +139,6 @@ img {
 #quote {
   color: rgba(255, 255, 255, 0.8);
   width: 1000px;
-  display: inline;
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -152,7 +149,6 @@ img {
 }
 
 #weather {
-  display: inline;
   color: white;
   text-align: center;
   font-size: 20px;

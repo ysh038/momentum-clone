@@ -34,7 +34,7 @@ author: "탈무드 격언",
     {
 quote: "나에게 지식이란 장작을 던져라. 그럼 나는 불타올라 온 세상을 밝히리.",
 author: "박성빈",
-    }
+    },
 ]
 
 const quote_parent = document.querySelector("#quote");
