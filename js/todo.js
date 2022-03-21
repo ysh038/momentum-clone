@@ -12,12 +12,38 @@ function saveToDos(){
 }
 
 function deleteToDo(event){
-    
-    console.log(event);
-    const li = event.target.parentElement;
+    if(this.childNodes[1].childNodes[0].classList.contains("hidden")){
+        this.childNodes[1].childNodes[0].classList.remove("hidden");
+        
+        this.childNodes[1].childNodes[0].classList.add("dropdown");
+        this.childNodes[1].childNodes[0].classList.add("scale-up-ver-top");
+    }else{
+        this.childNodes[1].childNodes[0].classList.add("hidden");
+        this.childNodes[1].childNodes[0].classList.remove("dropdown");
+        this.childNodes[1].childNodes[0].classList.remove("scale-up-ver-top");
+    }
+    /*const dropDown = document.createElement("li");
+    const dotButton = document.createElement("button");
+    dotButton.type="button";
+    dotButton.innerText="delete";
+    dotButton.addEventListener("click",realDelete);
+    dropDown.appendChild(dotButton);
+    this.appendChild(dropDown);
+*/
+
+    /*const li = event.target.parentElement;
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     //const li = this.parentElement;
     li.remove();
+    */
+    saveToDos();
+}
+
+function realDelete(event){
+    const menuButton = this.parentElement.parentElement;
+    const list = this.parentElement.parentElement.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(list.id));
+    list.remove();
     saveToDos();
 }
 
@@ -28,8 +54,27 @@ function paintToDo(newTodo){
     span.innerText = newTodo.text+" ";
     const button = document.createElement("button");
     button.type = "button";
-    button.innerText = "❌";
+    button.innerText = "···";
     button.addEventListener("click", deleteToDo);
+
+    const dropDown = document.createElement("li");
+    const dotButton = document.createElement("button");
+    const finishbutton = document.createElement("button");
+
+    dotButton.type="button";
+    dotButton.innerText="delete";
+    dotButton.addEventListener("click",realDelete);
+
+    finishbutton.type="button";
+    finishbutton.innerText="finish";
+
+    dotButton.classList.add("hidden");
+    finishbutton.classList.add("hidden");
+
+    dropDown.appendChild(dotButton);
+    dropDown.appendChild(finishbutton);
+    button.appendChild(dropDown);
+
     li.appendChild(span);
     li.appendChild(button);
     toDoList.appendChild(li);
