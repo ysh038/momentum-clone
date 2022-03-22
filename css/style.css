@@ -8,15 +8,30 @@ body {
   animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
+.finished {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.menuButton {
+}
+
 .dropdown {
+  clear: both;
+  font-weight: lighter !important;
+  font-size: 20px !important;
+
+  align-items: center;
+
+  display: flex !important;
   z-index: 20;
-  position: absolute;
-  right: 46%;
+  position: relative !important;
+
   color: black !important;
   border: 10px !important;
   border-color: white !important;
   background-color: white !important;
-  border-radius: 10%;
+  border-radius: 5%;
 }
 
 .hidden {

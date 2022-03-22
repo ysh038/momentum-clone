@@ -14,13 +14,22 @@ function saveToDos(){
 function deleteToDo(event){
     if(this.childNodes[1].childNodes[0].classList.contains("hidden")){
         this.childNodes[1].childNodes[0].classList.remove("hidden");
+        this.childNodes[1].childNodes[1].classList.remove("hidden");
         
         this.childNodes[1].childNodes[0].classList.add("dropdown");
+        this.childNodes[1].childNodes[1].classList.add("dropdown");
+
         this.childNodes[1].childNodes[0].classList.add("scale-up-ver-top");
+        this.childNodes[1].childNodes[1].classList.add("scale-up-ver-top");
+
     }else{
         this.childNodes[1].childNodes[0].classList.add("hidden");
+        this.childNodes[1].childNodes[1].classList.add("hidden");
+
         this.childNodes[1].childNodes[0].classList.remove("dropdown");
         this.childNodes[1].childNodes[0].classList.remove("scale-up-ver-top");
+        this.childNodes[1].childNodes[1].classList.remove("dropdown");
+        this.childNodes[1].childNodes[1].classList.remove("scale-up-ver-top");
     }
     /*const dropDown = document.createElement("li");
     const dotButton = document.createElement("button");
@@ -47,12 +56,21 @@ function realDelete(event){
     saveToDos();
 }
 
+function FinishToDo(){
+    const list = this.parentElement.parentElement.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(list.id));
+
+    list.childNodes[0].classList.add("finished");
+    saveToDos();
+}
+
 function paintToDo(newTodo){
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");    
     span.innerText = newTodo.text+" ";
     const button = document.createElement("button");
+    button.classList.add("menuButton");
     button.type = "button";
     button.innerText = "···";
     button.addEventListener("click", deleteToDo);
@@ -67,6 +85,7 @@ function paintToDo(newTodo){
 
     finishbutton.type="button";
     finishbutton.innerText="finish";
+    finishbutton.addEventListener("click",FinishToDo);
 
     dotButton.classList.add("hidden");
     finishbutton.classList.add("hidden");
